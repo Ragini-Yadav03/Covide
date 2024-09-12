@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Geographical Spread of COVID-19 in India</h2>
+        <p class="mb-4">
+            This map provides a visual representation of the geographical distribution of COVID-19 cases across India. 
+            States and Union Territories with higher numbers of confirmed cases are highlighted in darker shades.
+        </p>
+        
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold mb-4">Total Cases by State</h3>
+            <div>
+                {{ total_cases_div | safe }}
+            </div>
+        </div>
+        
+        <p class="mt-8">
+            The states of Maharashtra, Kerala, and Karnataka have seen the highest numbers of confirmed cases. 
+            The map highlights these regions, helping us understand the regional spread of the pandemic.
+        </p>
+    </section>
+{% endblock %}

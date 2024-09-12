@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">State-wise COVID-19 Cases and Deaths</h2>
+        <p class="mb-4">
+            This analysis shows the number of total confirmed cases and deaths across different states and Union Territories (UTs) of India.
+            The graphs below provide insights into how the pandemic has spread and its impact on the population of various regions.
+        </p>
+        
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold mb-4">Total Confirmed Cases by State</h3>
+            <div>
+                {{ statewise_cases_div | safe }}
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <h3 class="text-xl font-semibold mb-4">Total Deaths by State</h3>
+            <div>
+                {{ statewise_deaths_div | safe }}
+            </div>
+        </div>
+        
+        <p class="mt-8">
+            The data reveals that states with larger populations, such as Maharashtra and Kerala, have reported the highest number of cases.
+            The number of deaths, however, does not strictly correlate with the number of cases and varies significantly between states due to different healthcare systems and responses.
+        </p>
+    </section>
+{% endblock %}

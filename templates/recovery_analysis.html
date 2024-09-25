@@ -1,23 +1,89 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section class="bg-white p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">State-wise COVID-19 Recovery Rates</h2>
-        <p class="mb-4">
-            The recovery rate represents the percentage of confirmed COVID-19 patients who have recovered. 
-            This metric provides insight into the effectiveness of healthcare systems and pandemic responses across different regions of India.
-        </p>
-        
-        <div class="mt-6">
-            <h3 class="text-xl font-semibold mb-4">Recovery Rate by State</h3>
-            <div>
-                {{ recovery_rate_div | safe }}
-            </div>
+<!-- Hero Section -->
+<section class="bg-cover bg-center h-[55vh] text-white"
+    style="background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/H8WuRINimqur8ud/videoblocks-coronavirus-covid-19-background_rk80xzipu__d_thumbnail-1080_01.png');">
+    <div class="absolute "></div> <!-- Dark overlay -->
+    <div class="relative z-10 flex justify-center items-center h-full">
+        <div class="text-center px-4">
+            <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">State-wise COVID-19 Recovery Rates</h1>
+            <p class="text-lg font-medium max-w-2xl mx-auto">
+                Recovery rates provide critical insights into how different regions managed the COVID-19 outbreak.
+                This analysis focuses on understanding the recovery trends across India.
+            </p>
         </div>
-        
-        <p class="mt-8">
-            States such as Kerala and Andhra Pradesh show higher recovery rates, indicating a better ability to manage the outbreak. 
-            However, some states with lower recovery rates, like Maharashtra, may have faced challenges in healthcare infrastructure.
+    </div>
+</section>
+
+<!-- Main Content Section -->
+<section class="bg-white p-10 rounded-lg shadow-lg  max-w-6xl mx-auto" style="margin-top: -45px;">
+    <!-- Analysis Text -->
+    <div class="mb-8 text-center">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4 tracking-wide">Insights on Recovery Rates</h3>
+        <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+            The recovery rate represents the percentage of confirmed COVID-19 patients who have recovered.
+            This metric is key to assessing the effectiveness of healthcare systems and pandemic responses across
+            different regions of India.
         </p>
-    </section>
+    </div>
+
+    <!-- Line Chart for Recovery Rates -->
+    <div class="mt-6">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Recovery Rate by State (Line Chart)</h3>
+        <div>
+            {{ recovery_rate_line_chart | safe }}
+        </div>
+    </div>
+
+    <!-- Cards Section for Key Insights -->
+    <div class="flex flex-wrap justify-center gap-6 mt-10">
+        <!-- Highest Recovery Rate Card -->
+        <div class="bg-green-100 border border-green-400 p-6 rounded-lg shadow-md text-center w-64">
+            <h4 class="text-xl font-bold text-green-700">Highest Recovery Rate</h4>
+            <p class="mt-2 text-gray-600">
+                Kerala has one of the highest recovery rates in India, reflecting a strong healthcare response to the
+                pandemic.
+            </p>
+            <p class="mt-4 text-2xl font-semibold text-green-800">95%</p>
+        </div>
+
+        <!-- Average Recovery Rate Card -->
+        <div class="bg-yellow-100 border border-yellow-400 p-6 rounded-lg shadow-md text-center w-64">
+            <h4 class="text-xl font-bold text-yellow-700">Average Recovery Rate</h4>
+            <p class="mt-2 text-gray-600">
+                The average recovery rate across states demonstrates how most regions successfully managed to treat
+                COVID-19 patients.
+            </p>
+            <p class="mt-4 text-2xl font-semibold text-yellow-800">85%</p>
+        </div>
+
+        <!-- Lowest Recovery Rate Card -->
+        <div class="bg-red-100 border border-red-400 p-6 rounded-lg shadow-md text-center w-64">
+            <h4 class="text-xl font-bold text-red-700">Lowest Recovery Rate</h4>
+            <p class="mt-2 text-gray-600">
+                Maharashtra, despite a high number of recoveries, had one of the lower recovery rates due to
+                overwhelming case numbers.
+            </p>
+            <p class="mt-4 text-2xl font-semibold text-red-800">70%</p>
+        </div>
+    </div>
+
+    <!-- Additional Content with Design Enhancements -->
+    <div class="mt-16 max-w-3xl mx-auto text-gray-700 mb-16 text-center">
+        <p class="text-lg leading-relaxed mb-6">
+            States such as <span class="font-semibold text-green-600">Kerala</span> and <span
+                class="font-semibold text-blue-600">Andhra Pradesh</span> show higher recovery rates, indicating a
+            better ability to manage the outbreak.
+            However, some states with lower recovery rates, like <span
+                class="font-semibold text-red-600">Maharashtra</span>, may have faced challenges in healthcare
+            infrastructure.
+        </p>
+        <p class="text-lg leading-relaxed">
+            <span class="font-semibold text-indigo-600">Improved healthcare systems</span> and government interventions
+            have significantly impacted recovery rates, demonstrating the importance of proactive strategies in
+            combating the pandemic.
+        </p>
+    </div>
+</section>
 {% endblock %}

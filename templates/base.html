@@ -8,13 +8,16 @@
     <link href="{{ url_for('static', filename='tailwind.min.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-100 text-gray-900">
-    <header class="bg-indigo-600 text-white p-4">
-        <h1 class="text-3xl font-bold">COVID-19 India Statewise Data Analysis</h1>
-        <nav class="mt-4">
-            <a href="{{ url_for('home') }}" class="mr-4 text-white hover:text-yellow-300">Home</a>
-            <a href="{{ url_for('state_analysis') }}" class="mr-4 text-white hover:text-yellow-300">State Analysis</a>
-            <a href="{{ url_for('recovery_analysis') }}" class="mr-4 text-white hover:text-yellow-300">Recovery Analysis</a>
-            <a href="{{ url_for('geo_analysis') }}" class="text-white hover:text-yellow-300">Geographical Analysis</a>
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-purple-600">CovidInsight</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/state-analysis" class="text-gray-700 hover:text-purple-600 font-semibold">State Analysis</a>
+                    <a href="/recovery-analysis" class="text-gray-700 hover:text-purple-600 font-semibold">Recovery Analysis</a>
+                    <a href="/geo-analysis" class="text-gray-700 hover:text-purple-600 font-semibold">Geo Analysis</a>
+                </div>
+            </div>
         </nav>
     </header>
     <main class="p-6">
